@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import User from './User'
 
 export const UserContext = React.createContext();
@@ -9,9 +9,11 @@ class App extends React.Component {
 
     this.state = {
       local: 0,
+      bucket: 'im a bucket',
       toggleLocal: (props) => {
-        this.setState(({local}) => ({
-          local: props === 'Add' ? local + 1 : local -1
+        this.setState(({local, bucket}) => ({
+          local: props === 'Add' ? local + 1 : local -1,
+          bucket: props === 'Add' ? 'now im a CHUM bucket' : 'im a bucket'
         })); 
       }
     }
