@@ -4,16 +4,16 @@ import { UserContext } from './App'
 export default function User() {
     const [butt, setButt] = useState('Add');
 
-    async function handleChange(props) {
+    function handleChange(props) {
         setButt(butt === 'Add' ? 'Remove' : 'Add');
-        console.log(props);
+        console.log("we handled SHIT");
     }
 
     return (
         <div>
             <UserContext.Consumer>
-                {({local, toggleLocal, bucket}) => (
-                    <button onClick={() => {toggleLocal(butt); handleChange(bucket)}}>{butt}</button>
+                {(props) => (
+                    <button onClick ={() => {props.toggleLocal(butt); handleChange()}}>{butt}</button>
                 )}
             </UserContext.Consumer>
         </div>
