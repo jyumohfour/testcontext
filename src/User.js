@@ -7,7 +7,7 @@ export default function User() {
     return (
         <div>
             <UserContext.Consumer>
-                {({local}) => <h1>{local}</h1>}
+                {({arr}) => <h1>{arr.length}</h1>}
             </UserContext.Consumer>
             <Inside />
             <Inside />

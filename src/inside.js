@@ -5,7 +5,7 @@ export default function User() {
     const [butt, setButt] = useState('Add');
     const [title, setTitle] = useState(Math.floor(Math.random()*100));
 
-    function handleChange(props) {
+    function handleChange() {
         setButt(butt === 'Add' ? 'Remove' : 'Add');
         console.log("we handled SHIT");
     }
